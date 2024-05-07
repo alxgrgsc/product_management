@@ -9,8 +9,7 @@ This repository contains a gRPC-based product management service. It allows user
 - [Installation](#installation)
 - [Usage](#usage)
 - [API Reference](#api-reference)
-- [Contributing](#contributing)
-- [License](#license)
+
 
 ## Installation
 
