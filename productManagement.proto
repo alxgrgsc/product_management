@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+service ProductManagement {
+  //client stream
+  rpc AddProduct (stream AddProductRequest) returns (AddProductResponse) {}
+  //Unary
+  rpc GetProductDetails (GetProductDetailsRequest) returns (GetProductDetailsResponse) {}
+  //bidirectional
+  rpc UpdateProductInventory (stream UpdateProductInventoryRequest) returns (stream UpdateProductInventoryResponse) {}
+  //server stream
+  rpc ListAllProducts (ListAllProductsRequest) returns (stream ListAllProductsResponse) {}
+}
+
+message AddProductRequest{
+  string id = 1;
+  string name = 2;
+  int32 inventory = 3;
+}
+
+message AddProductResponse {
+  string message = 1;
+}
+
+message GetProductDetailsRequest {
+  string id = 1;
+}
+
+message GetProductDetailsResponse{
+  string id = 1;
+  string name = 2;
+  int32 inventory = 3;
+}
+
+message UpdateProductInventoryRequest {
+  string id = 1;
+  int32 inventory = 2;
+}
+
+message UpdateProductInventoryResponse {
+  string message = 1;
+  string id = 2;
+  string name = 3;
+  int32 inventory = 4;
+}
+
+message ListAllProductsRequest{
+
+}
+
+message ListAllProductsResponse{
+  string id = 1;
+  string name = 2;
+  int32 inventory = 3;
+}
